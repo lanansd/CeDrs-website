@@ -1,0 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
+
+export function CedarMark({className="h-12 w-12"}:{className?:string}){return <svg viewBox="0 0 100 112" className={className} aria-hidden="true" fill="none"><path d="M50 4C44 15 33 19 22 21c10 4 19 3 28-2 9 5 18 6 28 2C67 19 56 15 50 4Z" fill="currentColor"/><path d="M50 19c-9 14-23 19-39 21 14 7 27 7 39 0 12 7 25 7 39 0-16-2-30-7-39-21Z" fill="currentColor"/><path d="M50 40C39 54 23 59 5 60c17 10 32 10 45 2 13 8 28 8 45-2-18-1-34-6-45-20Z" fill="currentColor"/><path d="M50 61C40 73 28 79 14 82c13 5 24 4 32-1v17H31v8h38v-8H54V81c8 5 19 6 32 1-14-3-26-9-36-21Z" fill="currentColor"/></svg>}
+export function Logo({light=false,compact=false}:{light?:boolean;compact?:boolean}){return <Link href="/" aria-label="CeDrs home" data-light={light} className="inline-flex items-center bg-cedar"><Image src="/cedrs-logo.png" alt="CeDrs — Cedars & Doctors" width={539} height={228} priority className={`h-auto object-contain ${compact?"w-24":"w-32 md:w-36"}`}/></Link>}

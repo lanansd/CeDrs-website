@@ -1,0 +1,12 @@
+import type {Metadata} from "next";
+import Image from "next/image";
+import {ArrowUpRight} from "lucide-react";
+import {Reveal,ImageReveal} from "@/components/MotionSystem";
+import {announcements} from "@/data/announcements";
+export const metadata:Metadata={title:"Newsroom"};
+
+export default function AnnouncementsPage(){return <>
+  <section className="bg-white pb-24 pt-40 md:pb-32 md:pt-52"><div className="shell grid items-end gap-14 lg:grid-cols-[.75fr_1.25fr]"><Reveal><p className="eyebrow text-cedar/55">CeDrs newsroom</p><h1 className="hero-type mt-8">Medicine<br/>in motion.</h1><p className="mt-8 max-w-lg text-sm leading-7 text-cedar/58">Official events, workshops, openings, and research opportunities—published when confirmed.</p></Reveal><ImageReveal className="relative h-[520px] md:h-[650px]"><Image src="/research-newsroom.png" alt="Medical researchers reviewing findings" fill priority sizes="(max-width:1024px) 100vw,58vw" className="object-cover"/><div className="image-wash absolute inset-0"/><p className="absolute bottom-7 left-7 text-[.58rem] font-bold uppercase tracking-[.18em] text-white">Research · Collaboration · Discovery</p></ImageReveal></div></section>
+  <section className="bg-cedar py-5 text-white"><div className="shell flex flex-wrap gap-x-9 gap-y-3 text-[.57rem] font-bold uppercase tracking-[.18em]"><span className="text-mist">All updates</span><span className="text-white/45">Events</span><span className="text-white/45">Workshops</span><span className="text-white/45">Research</span><span className="text-white/45">Openings</span></div></section>
+  <section className="bg-white py-20 md:py-32"><div className="shell"><div className="border-t hairline">{announcements.map((item,i)=><Reveal key={item.title} delay={i*.06} className="group grid gap-6 border-b hairline py-10 md:grid-cols-[120px_180px_1fr_50px] md:items-start"><span className="display text-3xl text-terracotta">0{i+1}</span><div><p className="text-[.57rem] font-bold uppercase tracking-[.17em] text-brown">{item.category}</p><p className="mt-3 text-xs text-cedar/42">{item.date}</p></div><div><h2 className="display text-4xl leading-tight md:text-5xl">{item.title}</h2><p className="mt-5 max-w-2xl text-sm leading-7 text-cedar/58">{item.description}</p></div><span className="grid h-11 w-11 place-items-center border hairline transition duration-300 group-hover:bg-cedar group-hover:text-white"><ArrowUpRight size={15}/></span></Reveal>)}</div></div></section>
+  </>}

@@ -1,0 +1,2 @@
+import {Reveal} from "./MotionSystem";
+export function PageHero({eyebrow,title,intro}:{eyebrow:string;title:string;intro:string}){return <section className="editorial-grid bg-cedar pb-20 pt-36 text-white md:pb-28 md:pt-48"><Reveal className="shell"><span className="eyebrow text-mist">{eyebrow}</span><h1 className="hero-type mt-7">{title}</h1><p className="lede mt-7 max-w-2xl text-white/65">{intro}</p></Reveal></section>}

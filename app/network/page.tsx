@@ -1,0 +1,12 @@
+import type {Metadata} from "next";
+import Link from "next/link";
+import {Reveal} from "@/components/MotionSystem";
+import {WorldMap} from "@/components/WorldMap";
+export const metadata:Metadata={title:"Global Network"};
+
+export default function NetworkPage(){return <>
+  <section className="editorial-grid relative overflow-hidden bg-cedar pb-24 pt-44 text-white md:pb-36 md:pt-56"><div className="shell"><div className="grid items-end gap-12 lg:grid-cols-[1fr_340px]"><Reveal><p className="eyebrow text-mist">The CeDrs network</p><h1 className="hero-type mt-8 max-w-6xl">One community.<br/><span className="text-mist">Every border.</span></h1></Reveal><Reveal delay={.12} className="border-l border-terracotta pl-7"><p className="text-sm leading-7 text-white/65">A global ambition with Lebanon as its point of origin. Membership figures will be shown only after they are verified.</p></Reveal></div></div></section>
+  <section className="bg-cedar pb-24 text-white md:pb-36"><div className="shell"><WorldMap/></div></section>
+  <section className="bg-white py-28 md:py-44"><div className="shell grid gap-16 lg:grid-cols-[.62fr_1.38fr]"><Reveal><p className="eyebrow text-cedar/55">How connection moves</p><p className="index mt-14">03</p></Reveal><div className="border-t hairline">{[["01","Peer connection","Meet Lebanese medical students and future physicians across institutions and borders."],["02","Physician mentorship","Learn from experience, gain perspective, and navigate medicine with stronger guidance."],["03","Research collaboration","Turn shared questions into meaningful academic work and healthcare innovation."],["04","Professional development","Build the knowledge, confidence, and relationships needed for medical leadership."]].map(([n,title,body],i)=><Reveal key={n} delay={i*.06} className="grid gap-5 border-b hairline py-9 md:grid-cols-[70px_1fr_1fr]"><span className="display text-3xl text-terracotta">{n}</span><h2 className="display text-4xl">{title}</h2><p className="text-sm leading-7 text-cedar/58">{body}</p></Reveal>)}</div></div></section>
+  <section className="bg-terracotta py-24 text-white md:py-32"><div className="shell grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end"><Reveal><p className="eyebrow text-white/60">A network built by its people</p><h2 className="title-type mt-8 max-w-5xl">The next connection could change a career.</h2></Reveal><Link href="/apply" className="application-link">Become a CeDr</Link></div></section>
+  </>}
