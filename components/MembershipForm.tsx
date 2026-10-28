@@ -21,7 +21,7 @@ export function MembershipForm(){
       "Why I would like to join CeDrs:",
       value("motivation"),
     ].join("\n");
-    window.location.href=`mailto:hello@cedrs.org?subject=${encodeURIComponent(`CeDr application — ${name}`)}&body=${encodeURIComponent(body)}`;
+    window.location.href=`mailto:cedrsmd@outlook.com?subject=${encodeURIComponent(`CeDr application — ${name}`)}&body=${encodeURIComponent(body)}`;
   }
 
   return <form onSubmit={openApplication} className="grid gap-7">
@@ -35,6 +35,6 @@ export function MembershipForm(){
       <label className="grid gap-2 text-[.6rem] font-bold uppercase tracking-[.15em]">Lebanese connection<input name="connection" required className="field normal-case" placeholder="Tell us briefly"/></label>
     </div>
     <label className="grid gap-2 text-[.6rem] font-bold uppercase tracking-[.15em]">Why would you like to join CeDrs?<textarea name="motivation" required className="field min-h-40 resize-y normal-case" placeholder="Your motivation, interests, and what you hope to contribute"/></label>
-    <div className="flex flex-wrap items-center gap-5"><button type="submit" className="button-clay">Prepare my <span className="normal-case">CeDr</span> application <ArrowUpRight size={15}/></button><a href="mailto:hello@cedrs.org?subject=CeDr%20application" className="text-[.6rem] font-bold uppercase tracking-[.14em] text-cedar/55">Email instead</a></div>
+    <div className="flex flex-wrap items-center gap-5"><button type="submit" className="button-clay">Prepare my <span className="normal-case">CeDr</span> application <ArrowUpRight size={15}/></button><a href="mailto:cedrsmd@outlook.com?subject=CeDr%20application" className="text-[.6rem] font-bold uppercase tracking-[.14em] text-cedar/55">Email instead</a></div>
   </form>;
 }
